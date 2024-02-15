@@ -2,10 +2,13 @@
 body {
   background: url(https://unsplash.com/photos/a-pink-and-yellow-background-with-a-white-border-MzfOPW5Tb3M);
   font-family: "Pacifico", cursive;
-  background-size: 100vw 100vh;
-  /* overflow: hidden; */
+  margin: 0;
+  padding: 0;
+  display: flex;
   color: #fff;
-  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 .bgoverlay {
   background: rgba(223, 90, 168, 0.64);
@@ -18,27 +21,31 @@ body {
 }
 .container {
   position: relative;
-  margin: 320px auto 0 auto;
+  margin: 0 auto;
   width: 320px;
+  text-align: center;
+  margin-top: 250px;
 }
 
 .ico {
   display: block;
-  width: 320px;
-  height: 320px;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  margin-left: -300px;
+  margin-top: 250px;
 }
 .open .ico {
-  animation: open 4s;
-  transform: scale(10);
+  animation: open 6s;
+  transform: scale(3);
 }
 .ico .title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -95px;
-  margin-top: -73px;
-  z-index: 4;
-  font-size: 50px;
+  position: relative;
+  top: 190px;
+  left: 350px;
+  transform: translate(-50%, -50%);
+  z-index: 300;
+  font-size: 60px;
   font-family: "Pacifico", cursive;
   color: #fff;
   cursor: pointer;
@@ -47,7 +54,8 @@ body {
 .open .ico .title {
   opacity: 0;
   transition: all 0.3s ease;
-  top: -100px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .ico:before,
 .ico:after,
@@ -62,9 +70,9 @@ body {
 .ico2:before,
 .ico2:after {
   display: block;
-  font-size: 20em;
+  font-size: 50em;
   color: #ff4081;
-  content: "\f004";
+  content: "\2665";
   font-family: FontAwesome;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -73,9 +81,10 @@ body {
 .ico2:before,
 .ico2:after {
   color: #e91e63;
+  content: "\2665";
 }
 .ico:before {
-  z-index: 3;
+  z-index: 5;
 }
 .ico:after {
   animation: explode 4s infinite;
@@ -90,7 +99,7 @@ body {
 
 .endtext {
   opacity: 0;
-  position: absolute;
+  position: relative;
   top: -100px;
   width: 100%;
 }
@@ -98,9 +107,11 @@ body {
   top: 0;
   opacity: 1;
   animation: show 5s;
+  top: 190px;
+  left: 80px;
 }
 .endtext .close {
-  position: absolute;
+  position: relative;
   top: 0;
   right: 0;
   cursor: pointer;
@@ -112,15 +123,16 @@ body {
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   text-align: center;
   font-weight: normal;
+  margin-top: 100px;
 }
 .endtext h1 {
-  font-size: 50px;
+  font-size: 100px;
 }
 .endtext h2 {
-  font-size: 30px;
+  font-size: 100px;
 }
 .endtext h3 {
-  font-size: 20px;
+  font-size: 100px;
 }
 
 @keyframes explode {
@@ -139,7 +151,7 @@ body {
     opacity: 1;
   }
   to {
-    transform: scale(1.2);
+    transform: scale(1.5);
     opacity: 0;
   }
 }
@@ -149,7 +161,7 @@ body {
     transform: scale(1);
   }
   to {
-    transform: scale(10);
+    transform: scale(3.5);
   }
 }
 
@@ -160,6 +172,16 @@ body {
   }
   to {
     opacity: 1;
-    top: 0;
+    top: -50px;
   }
 }
+
+@media only screen and (max-width: 600px) {
+    .ico .title {
+      font-size: 6vw; /* Adjusted font size for smaller screens */
+    }
+  
+    .endtext .close {
+      text-shadow: 0.4vw 0.8vw 0.6vw rgba(0, 0, 0, 0.3); /* Adjusted text-shadow for smaller screens */
+    }
+  }

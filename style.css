@@ -1,6 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 body {
   background: url(https://unsplash.com/photos/a-pink-and-yellow-background-with-a-white-border-MzfOPW5Tb3M);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   font-family: "Pacifico", cursive;
   margin: 0;
   padding: 0;

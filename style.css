@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
+
 body {
   background: url(https://unsplash.com/photos/a-pink-and-yellow-background-with-a-white-border-MzfOPW5Tb3M);
   background-repeat: no-repeat;
@@ -13,53 +14,53 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
+
 .bgoverlay {
-  background: rgba(223, 90, 168, 0.64);
   background: rgba(218, 84, 122, 0.53);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 }
+
 .container {
   position: relative;
   margin: 0 auto;
-  width: 320px;
+  width: 90%;
+  max-width: 320px;
   text-align: center;
-  margin-top: 250px;
+  margin-top: 20vh;
 }
 
 .ico {
   display: block;
-  width: 200px;
-  height: 200px;
+  width: 60vw;
+  height: 60vw;
+  max-width: 200px;
+  max-height: 200px;
   margin: 0 auto;
-  margin-left: -300px;
-  margin-top: 250px;
-}
-.open .ico {
   animation: open 6s;
   transform: scale(3);
 }
+
 .ico .title {
-  position: relative;
-  top: 190px;
-  left: 350px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 300;
-  font-size: 60px;
-  font-family: "Pacifico", cursive;
+  font-size: 6vw; /* Use vw for responsive font size */
   color: #fff;
   cursor: pointer;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
+
 .open .ico .title {
   opacity: 0;
   transition: all 0.3s ease;
-  top: 50%;
-  transform: translateY(-50%);
 }
+
 .ico:before,
 .ico:after,
 .ico2:before,
@@ -68,12 +69,13 @@ body {
   top: 0;
   left: 0;
 }
+
 .ico:before,
 .ico:after,
 .ico2:before,
 .ico2:after {
   display: block;
-  font-size: 50em;
+  font-size: 20vw;
   color: #ff4081;
   content: "\2665";
   font-family: FontAwesome;
@@ -81,14 +83,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .ico2:before,
 .ico2:after {
   color: #e91e63;
   content: "\2665";
 }
+
 .ico:before {
   z-index: 5;
 }
+
 .ico:after {
   animation: explode 4s infinite;
 }
@@ -96,6 +101,7 @@ body {
 .ico2:before {
   animation: explodeSmall 3s infinite;
 }
+
 .ico2:after {
   animation: explodeSmall 2s infinite;
 }
@@ -103,39 +109,29 @@ body {
 .endtext {
   opacity: 0;
   position: relative;
-  top: -100px;
   width: 100%;
 }
+
 .open .endtext {
-  top: 0;
   opacity: 1;
   animation: show 5s;
-  top: 190px;
-  left: 80px;
+  top: 20vh;
 }
+
 .endtext .close {
   position: relative;
-  top: 0;
-  right: 0;
   cursor: pointer;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
+
 .endtext h1,
 .endtext h2,
 .endtext h3 {
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   text-align: center;
   font-weight: normal;
-  margin-top: 100px;
-}
-.endtext h1 {
-  font-size: 100px;
-}
-.endtext h2 {
-  font-size: 100px;
-}
-.endtext h3 {
-  font-size: 100px;
+  font-size: 8vw;
+  margin-top: 10vh;
 }
 
 @keyframes explode {
@@ -144,10 +140,11 @@ body {
     opacity: 1;
   }
   to {
-    transform: scale(1.6);
+    transform: scale(1.5);
     opacity: 0;
   }
 }
+
 @keyframes explodeSmall {
   from {
     transform: scale(1);
@@ -164,7 +161,7 @@ body {
     transform: scale(1);
   }
   to {
-    transform: scale(3.5);
+    transform: scale(1.5);
   }
 }
 
@@ -180,11 +177,11 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-    .ico .title {
-      font-size: 6vw; /* Adjusted font size for smaller screens */
-    }
-  
-    .endtext .close {
-      text-shadow: 0.4vw 0.8vw 0.6vw rgba(0, 0, 0, 0.3); /* Adjusted text-shadow for smaller screens */
-    }
+  .ico .title {
+    font-size: 10vw; /* Increase font size for smaller screens */
   }
+
+  .endtext .close {
+    text-shadow: 0.4vw 0.8vw 0.6vw rgba(0, 0, 0, 0.3); /* Adjust text-shadow for smaller screens */
+  }
+}
